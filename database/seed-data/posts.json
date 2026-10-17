@@ -1,0 +1,753 @@
+[
+  {
+    "slug": "draft-ai-pair-programming",
+    "date": "2026-10-17",
+    "category": "ai",
+    "cover": "circuit",
+    "tags": [
+      "AI tools",
+      "Draft"
+    ],
+    "published": false,
+    "title": {
+      "en": "Notes on pair programming with an AI assistant",
+      "bn": "AI সহকারীর সঙ্গে পেয়ার প্রোগ্রামিংয়ের নোট"
+    },
+    "excerpt": {
+      "en": "Draft: what changed in my daily workflow after a year of coding with an AI assistant.",
+      "bn": "খসড়া: এক বছর AI সহকারীর সঙ্গে কোড লেখার পর আমার দৈনন্দিন কাজে যা বদলেছে।"
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "Draft in progress."
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "খসড়া লেখা চলছে।"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "one-laravel-app-for-site-and-dashboard",
+    "date": "2026-10-16",
+    "category": "coding",
+    "cover": "code",
+    "tags": [
+      "Laravel",
+      "Inertia",
+      "React"
+    ],
+    "published": true,
+    "title": {
+      "en": "One Laravel app for the site and the dashboard",
+      "bn": "সাইট আর ড্যাশবোর্ডের জন্য একটিই Laravel অ্যাপ"
+    },
+    "excerpt": {
+      "en": "Why this site and its admin share one Laravel + Inertia codebase, with two separate React front ends.",
+      "bn": "কেন এই সাইট আর তার অ্যাডমিন একটিই Laravel + Inertia কোডবেস ভাগ করে, যেখানে দুটি আলাদা React ফ্রন্টএন্ড।"
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "This site used to be a separate front end talking to an API. Now one Laravel application renders both the public pages and the dashboard, with Inertia passing data straight from controllers to React components."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Two front ends, one backend"
+        },
+        {
+          "type": "paragraph",
+          "text": "The public site and the dashboard have different needs. The site must be fast and indexable, so it is rendered on the server. The dashboard sits behind a login, so it renders in the browser. Each has its own entry point, stylesheet, and root template."
+        },
+        {
+          "type": "code",
+          "language": "php",
+          "code": "Route::prefix('{lang}')->group(function () {\n    Route::get('/', [PublicSiteController::class, 'home']);\n    Route::get('experience', [PublicSiteController::class, 'experience']);\n});\n\nRoute::middleware(['auth', 'admin'])->prefix('admin')->group(function () {\n    Route::resource('posts', PostController::class);\n});"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What I gained"
+        },
+        {
+          "type": "list",
+          "items": [
+            "No API layer to version for my own pages.",
+            "Validation errors flow straight back into the forms.",
+            "One deploy, one database, one set of tests."
+          ]
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "এই সাইট আগে একটি আলাদা ফ্রন্টএন্ড ছিল যা API-এর সঙ্গে কথা বলত। এখন একটিই Laravel অ্যাপ পাবলিক পাতা আর ড্যাশবোর্ড দুটোই দেখায়, আর Inertia কন্ট্রোলার থেকে সরাসরি React কম্পোনেন্টে ডেটা পাঠায়।"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "দুটি ফ্রন্টএন্ড, একটি ব্যাকএন্ড"
+        },
+        {
+          "type": "paragraph",
+          "text": "পাবলিক সাইট আর ড্যাশবোর্ডের প্রয়োজন আলাদা। সাইটকে দ্রুত ও সার্চ ইঞ্জিনে খুঁজে পাওয়ার যোগ্য হতে হয়, তাই সেটি সার্ভারে রেন্ডার হয়। ড্যাশবোর্ড লগইনের পেছনে, তাই সেটি ব্রাউজারে রেন্ডার হয়। প্রত্যেকের নিজস্ব এন্ট্রি পয়েন্ট, স্টাইলশিট আর রুট টেমপ্লেট আছে।"
+        },
+        {
+          "type": "code",
+          "language": "php",
+          "code": "Route::prefix('{lang}')->group(function () {\n    Route::get('/', [PublicSiteController::class, 'home']);\n    Route::get('experience', [PublicSiteController::class, 'experience']);\n});\n\nRoute::middleware(['auth', 'admin'])->prefix('admin')->group(function () {\n    Route::resource('posts', PostController::class);\n});"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "যা পেয়েছি"
+        },
+        {
+          "type": "list",
+          "items": [
+            "নিজের পাতার জন্য কোনো API লেয়ার ভার্সন করতে হয় না।",
+            "ভ্যালিডেশন এরর সরাসরি ফর্মে ফিরে আসে।",
+            "একটি ডিপ্লয়, একটি ডাটাবেস, এক সেট টেস্ট।"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "rag-in-practice",
+    "date": "2026-10-14",
+    "category": "ai",
+    "cover": "neural",
+    "tags": [
+      "LLM",
+      "RAG",
+      "Embeddings"
+    ],
+    "published": true,
+    "title": {
+      "en": "Retrieval-augmented generation, without the hype",
+      "bn": "হাইপ ছাড়া রিট্রিভাল-অগমেন্টেড জেনারেশন"
+    },
+    "excerpt": {
+      "en": "What actually matters when you connect a language model to your own documents: chunking, retrieval quality, and honest citations.",
+      "bn": "নিজের ডকুমেন্টের সঙ্গে ভাষা মডেল যুক্ত করার সময় আসলে যা গুরুত্বপূর্ণ: চাঙ্কিং, রিট্রিভালের মান, আর সৎ সূত্র উল্লেখ।"
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "Retrieval-augmented generation (RAG) sounds complicated, but the idea is simple: before the model answers, you find the few passages from your own documents that are most likely to contain the answer, and you put them in the prompt."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Retrieval is the product"
+        },
+        {
+          "type": "paragraph",
+          "text": "Most bad RAG answers are retrieval failures, not model failures. If the right paragraph never reaches the prompt, no model can quote it. So I spend most of my time on what gets retrieved, and very little on the final prompt."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Chunk by meaning, not by a fixed number of characters. A heading and its paragraphs belong together.",
+            "Store the title and section path with every chunk, so the model knows where a passage came from.",
+            "Drop weak matches. Six good passages beat twenty mediocre ones."
+          ]
+        },
+        {
+          "type": "code",
+          "language": "php",
+          "code": "$question = $request->string('question');\n\n$chunks = Chunk::query()\n    ->nearestTo(Embedding::of($question), limit: 6)\n    ->where('score', '>=', 0.75)\n    ->get();\n\n$answer = $llm->answer($question, context: $chunks, cite: true);"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Make the model show its sources"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ask for citations and render them as links. Readers trust an answer more when they can check it, and you find retrieval bugs faster when every claim points at a chunk."
+        },
+        {
+          "type": "callout",
+          "text": "If retrieval finds nothing above the threshold, say so. “I couldn’t find this in the docs” is a better answer than a confident guess."
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "রিট্রিভাল-অগমেন্টেড জেনারেশন (RAG) শুনতে জটিল, কিন্তু মূল ধারণা সহজ: মডেল উত্তর দেওয়ার আগে আপনার নিজের ডকুমেন্ট থেকে সবচেয়ে প্রাসঙ্গিক কয়েকটি অংশ খুঁজে বের করে প্রম্পটে দিয়ে দেওয়া।"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "রিট্রিভালই আসল পণ্য"
+        },
+        {
+          "type": "paragraph",
+          "text": "RAG-এর বেশিরভাগ ভুল উত্তর আসলে রিট্রিভালের ব্যর্থতা, মডেলের নয়। সঠিক অনুচ্ছেদ প্রম্পটে না পৌঁছালে কোনো মডেলই সেটি উদ্ধৃত করতে পারে না। তাই আমার বেশিরভাগ সময় যায় কী খুঁজে আনা হচ্ছে তা ঠিক করতে।"
+        },
+        {
+          "type": "list",
+          "items": [
+            "নির্দিষ্ট অক্ষর-সংখ্যা নয়, অর্থ অনুযায়ী চাঙ্ক করুন। শিরোনাম আর তার অনুচ্ছেদ একসঙ্গে থাকা উচিত।",
+            "প্রতিটি চাঙ্কের সঙ্গে শিরোনাম ও সেকশনের পথ রাখুন, যাতে মডেল জানে অংশটি কোথা থেকে এসেছে।",
+            "দুর্বল মিল বাদ দিন। বিশটি মাঝারি অংশের চেয়ে ছয়টি ভালো অংশ ভালো।"
+          ]
+        },
+        {
+          "type": "code",
+          "language": "php",
+          "code": "$question = $request->string('question');\n\n$chunks = Chunk::query()\n    ->nearestTo(Embedding::of($question), limit: 6)\n    ->where('score', '>=', 0.75)\n    ->get();\n\n$answer = $llm->answer($question, context: $chunks, cite: true);"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "মডেলকে সূত্র দেখাতে বলুন"
+        },
+        {
+          "type": "paragraph",
+          "text": "সূত্র চান এবং সেগুলো লিংক হিসেবে দেখান। পাঠক যাচাই করতে পারলে উত্তরে বেশি ভরসা পান, আর প্রতিটি দাবি একটি চাঙ্কের দিকে নির্দেশ করলে রিট্রিভালের বাগও দ্রুত ধরা পড়ে।"
+        },
+        {
+          "type": "callout",
+          "text": "নির্ধারিত সীমার ওপরে কিছু না পেলে সেটাই বলুন। আত্মবিশ্বাসী অনুমানের চেয়ে “ডকুমেন্টে এটি খুঁজে পাইনি” ভালো উত্তর।"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "evaluating-llm-features",
+    "date": "2026-10-02",
+    "category": "ai",
+    "cover": "data",
+    "tags": [
+      "LLM",
+      "Testing",
+      "Evaluation"
+    ],
+    "published": true,
+    "title": {
+      "en": "Test LLM features the way you test code",
+      "bn": "কোডের মতো করেই LLM ফিচার টেস্ট করুন"
+    },
+    "excerpt": {
+      "en": "A small evaluation set, checked on every change, catches more regressions than any amount of manual prompting.",
+      "bn": "প্রতিটি পরিবর্তনে চালানো ছোট একটি মূল্যায়ন-সেট, যেকোনো পরিমাণ হাতে-করা প্রম্পটিংয়ের চেয়ে বেশি রিগ্রেশন ধরে।"
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "When a feature is built on a language model, “it worked when I tried it” is not a test. Outputs vary, prompts drift, and a model upgrade can quietly change behaviour you relied on."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Start with thirty real examples"
+        },
+        {
+          "type": "paragraph",
+          "text": "Collect real inputs from users or support tickets. For each one, write down what a good answer must contain and what it must never say. You don’t need a perfect expected output, only checkable traits."
+        },
+        {
+          "type": "code",
+          "language": "yaml",
+          "code": "cases:\n  - input: \"How do I reset my password?\"\n    must_include: [\"Forgot password\", \"email\"]\n    must_not_include: [\"call support\"]\n  - input: \"পাসওয়ার্ড কীভাবে বদলাব?\"\n    language: bn\n    must_include: [\"পাসওয়ার্ড\"]"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Run it like a test suite"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Run the set in CI whenever the prompt, the model, or the retrieval code changes.",
+            "Track the pass rate over time, not just pass or fail.",
+            "Add every production bug as a new case before you fix it."
+          ]
+        },
+        {
+          "type": "quote",
+          "text": "If you can’t measure whether a change made the feature better, you are only changing it."
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "কোনো ফিচার ভাষা মডেলের ওপর তৈরি হলে “আমি চেষ্টা করেছিলাম, কাজ করেছে” কোনো টেস্ট নয়। আউটপুট বদলায়, প্রম্পট সরে যায়, আর মডেল আপগ্রেড চুপচাপ এমন আচরণ বদলে দিতে পারে যার ওপর আপনি নির্ভর করতেন।"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "ত্রিশটি বাস্তব উদাহরণ দিয়ে শুরু করুন"
+        },
+        {
+          "type": "paragraph",
+          "text": "ব্যবহারকারী বা সাপোর্ট টিকিট থেকে বাস্তব ইনপুট সংগ্রহ করুন। প্রতিটির জন্য লিখে রাখুন ভালো উত্তরে কী থাকতেই হবে আর কী কখনো থাকা চলবে না। নিখুঁত প্রত্যাশিত উত্তর লাগবে না, শুধু যাচাইযোগ্য বৈশিষ্ট্য।"
+        },
+        {
+          "type": "code",
+          "language": "yaml",
+          "code": "cases:\n  - input: \"How do I reset my password?\"\n    must_include: [\"Forgot password\", \"email\"]\n    must_not_include: [\"call support\"]\n  - input: \"পাসওয়ার্ড কীভাবে বদলাব?\"\n    language: bn\n    must_include: [\"পাসওয়ার্ড\"]"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "টেস্ট স্যুটের মতো চালান"
+        },
+        {
+          "type": "list",
+          "items": [
+            "প্রম্পট, মডেল বা রিট্রিভাল কোড বদলালেই CI-তে সেটটি চালান।",
+            "শুধু পাস-ফেল নয়, সময়ের সঙ্গে পাসের হার নজরে রাখুন।",
+            "প্রোডাকশনের প্রতিটি বাগ ঠিক করার আগে নতুন কেস হিসেবে যোগ করুন।"
+          ]
+        },
+        {
+          "type": "quote",
+          "text": "কোনো পরিবর্তনে ফিচার ভালো হলো কি না মাপতে না পারলে, আপনি শুধু সেটি বদলাচ্ছেন।"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "design-notes-on-simplicity",
+    "date": "2026-09-28",
+    "category": "engineering",
+    "cover": "orbit",
+    "tags": [
+      "Design"
+    ],
+    "published": true,
+    "title": {
+      "en": "Design Notes on Simplicity",
+      "bn": "সরলতা নিয়ে ডিজাইনের নোট"
+    },
+    "excerpt": {
+      "en": "Why I keep reaching for fewer colours, fewer borders, and more whitespace when designing interfaces.",
+      "bn": "ইন্টারফেস ডিজাইন করতে গেলে কেন আমি কম রং, কম বর্ডার আর বেশি খালি জায়গা বেছে নিই।"
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "Every border, colour, and shadow asks the reader for attention. When a page has too many of them, nothing stands out."
+        },
+        {
+          "type": "paragraph",
+          "text": "Starting from a neutral palette and adding one accent colour for actions makes hierarchy obvious without extra decoration."
+        },
+        {
+          "type": "callout",
+          "text": "Remove one thing from every screen before you add anything new."
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "প্রতিটি বর্ডার, রং আর ছায়া পাঠকের মনোযোগ চায়। একটি পাতায় এগুলো বেশি হলে কোনোটাই আলাদা করে চোখে পড়ে না।"
+        },
+        {
+          "type": "paragraph",
+          "text": "নিরপেক্ষ রঙের প্যালেটে শুরু করে শুধু কাজের বোতামের জন্য একটি অ্যাকসেন্ট রং রাখলে অতিরিক্ত সাজ ছাড়াই গুরুত্বের ক্রম স্পষ্ট হয়।"
+        },
+        {
+          "type": "callout",
+          "text": "নতুন কিছু যোগ করার আগে প্রতিটি পর্দা থেকে একটি জিনিস সরান।"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "prompts-are-code",
+    "date": "2026-09-20",
+    "category": "ai",
+    "cover": "terminal",
+    "tags": [
+      "LLM",
+      "Prompt engineering"
+    ],
+    "published": true,
+    "title": {
+      "en": "Treat prompts like code",
+      "bn": "প্রম্পটকে কোডের মতো দেখুন"
+    },
+    "excerpt": {
+      "en": "Version them, review them, and test them. Prompts that live in a database field are prompts nobody can debug.",
+      "bn": "ভার্সন রাখুন, রিভিউ করুন, টেস্ট করুন। ডাটাবেসের কোনো ফিল্ডে পড়ে থাকা প্রম্পট কেউ ডিবাগ করতে পারে না।"
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "A prompt decides how a feature behaves, just like a function does. Yet many teams keep prompts in a settings screen, edit them live, and have no idea which version produced yesterday’s bad answer."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Keep prompts next to the code"
+        },
+        {
+          "type": "code",
+          "language": "text",
+          "code": "prompts/\n  summarize-ticket/\n    v3.md          # the prompt, with variables\n    cases.yaml     # 40 real tickets and expected traits\n    CHANGELOG.md   # why v3 replaced v2"
+        },
+        {
+          "type": "list",
+          "items": [
+            "One folder per prompt, with its test cases beside it.",
+            "Changes go through pull requests, so someone reviews the wording.",
+            "Log the prompt version with every model call."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Small prompts, clear jobs"
+        },
+        {
+          "type": "paragraph",
+          "text": "A prompt that does one thing is easier to test than a page of instructions that tries to do five. When a prompt grows, split the task into steps and give each step its own prompt."
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "একটি ফাংশনের মতোই একটি প্রম্পট ঠিক করে ফিচার কীভাবে আচরণ করবে। তবুও অনেক টিম প্রম্পট রাখে সেটিংস পাতায়, সরাসরি বদলায়, আর জানে না গতকালের ভুল উত্তর কোন ভার্সন থেকে এসেছিল।"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "প্রম্পট কোডের পাশেই রাখুন"
+        },
+        {
+          "type": "code",
+          "language": "text",
+          "code": "prompts/\n  summarize-ticket/\n    v3.md          # the prompt, with variables\n    cases.yaml     # 40 real tickets and expected traits\n    CHANGELOG.md   # why v3 replaced v2"
+        },
+        {
+          "type": "list",
+          "items": [
+            "প্রতিটি প্রম্পটের জন্য একটি ফোল্ডার, পাশেই তার টেস্ট কেস।",
+            "পরিবর্তন যায় পুল রিকোয়েস্টের মাধ্যমে, যাতে কেউ শব্দচয়ন রিভিউ করে।",
+            "প্রতিটি মডেল কলের সঙ্গে প্রম্পটের ভার্সন লগ করুন।"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "ছোট প্রম্পট, স্পষ্ট কাজ"
+        },
+        {
+          "type": "paragraph",
+          "text": "পাঁচটি কাজ করতে চাওয়া এক পাতা নির্দেশনার চেয়ে একটি কাজ করা প্রম্পট টেস্ট করা সহজ। প্রম্পট বড় হতে থাকলে কাজটিকে ধাপে ভাগ করুন এবং প্রতিটি ধাপের জন্য আলাদা প্রম্পট দিন।"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "learning-in-public",
+    "date": "2026-09-14",
+    "category": "engineering",
+    "cover": "orbit",
+    "tags": [
+      "Writing",
+      "Life"
+    ],
+    "published": true,
+    "title": {
+      "en": "What I Learned Writing in Public",
+      "bn": "প্রকাশ্যে লিখে যা শিখেছি"
+    },
+    "excerpt": {
+      "en": "A month of sharing unfinished ideas taught me more about clarity than any editing pass ever did.",
+      "bn": "এক মাস অসম্পূর্ণ ভাবনা ভাগ করে নেওয়া আমাকে স্পষ্টতা সম্পর্কে যতটা শিখিয়েছে, কোনো সম্পাদনা ততটা শেখাতে পারেনি।"
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "Publishing drafts before they feel finished forces you to say the point in the first paragraph. Readers will not wait for it."
+        },
+        {
+          "type": "paragraph",
+          "text": "I also found that feedback arrives faster when the work is visible, and that most of it is about what is missing rather than what is wrong."
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "নিজের কাছে তৈরি মনে না হলেও খসড়া প্রকাশ করলে প্রথম অনুচ্ছেদেই মূল কথাটি বলতে হয়। পাঠক অপেক্ষা করেন না।"
+        },
+        {
+          "type": "paragraph",
+          "text": "আরও দেখেছি, কাজ দৃশ্যমান হলে মতামত দ্রুত আসে, আর তার বেশিরভাগই থাকে কী বাদ পড়েছে তা নিয়ে, কী ভুল হয়েছে তা নিয়ে নয়।"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "caching-mental-model",
+    "date": "2026-08-30",
+    "category": "engineering",
+    "cover": "data",
+    "tags": [
+      "Architecture",
+      "Performance"
+    ],
+    "published": true,
+    "title": {
+      "en": "A Mental Model for Caching in Web Apps",
+      "bn": "ওয়েব অ্যাপে ক্যাশিংয়ের একটি মানসিক মডেল"
+    },
+    "excerpt": {
+      "en": "Three questions I ask before adding a cache: who owns the data, how stale is acceptable, and how do I invalidate it?",
+      "bn": "ক্যাশ যোগ করার আগে আমি তিনটি প্রশ্ন করি: ডেটার মালিক কে, কতটা পুরোনো ডেটা চলবে, আর কীভাবে বাতিল করব?"
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "Most caching bugs are not technical. They come from nobody agreeing on how old the data is allowed to be. Before adding a cache, I write down three answers."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Who owns the data? The team that writes it should decide when it changes.",
+            "How stale can it be? A price can be a minute old; a bank balance cannot.",
+            "How do I invalidate it? If there is no clear answer, do not cache yet."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Cache the expensive part"
+        },
+        {
+          "type": "paragraph",
+          "text": "A cache is only worth its complexity when the thing it saves is slow or costly. Measure first. A query that takes two milliseconds does not need a Redis instance."
+        },
+        {
+          "type": "quote",
+          "text": "There are only two hard things in computer science: cache invalidation and naming things.",
+          "source": "Phil Karlton"
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "ক্যাশিংয়ের বেশিরভাগ বাগ প্রযুক্তিগত নয়। সমস্যা হয় যখন কেউ ঠিক করে না ডেটা কতটা পুরোনো হতে পারে। ক্যাশ যোগ করার আগে আমি তিনটি উত্তর লিখে রাখি।"
+        },
+        {
+          "type": "list",
+          "items": [
+            "ডেটার মালিক কে? যে দল ডেটা লেখে, পরিবর্তন কখন হবে তা তাদেরই ঠিক করা উচিত।",
+            "কতটা পুরোনো চলতে পারে? দাম এক মিনিট পুরোনো হলেও চলে; ব্যাংকের ব্যালেন্স চলে না।",
+            "কীভাবে বাতিল করব? স্পষ্ট উত্তর না থাকলে এখনই ক্যাশ না করাই ভালো।"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "খরচের অংশটুকুই ক্যাশ করুন"
+        },
+        {
+          "type": "paragraph",
+          "text": "যে জিনিস বাঁচানো হচ্ছে সেটি ধীর বা ব্যয়বহুল হলেই ক্যাশের জটিলতা কাজের। আগে মাপুন। দুই মিলিসেকেন্ডের একটি কোয়েরির জন্য Redis লাগে না।"
+        },
+        {
+          "type": "quote",
+          "text": "কম্পিউটার সায়েন্সে মাত্র দুটি কঠিন কাজ আছে: ক্যাশ বাতিল করা এবং নাম রাখা।",
+          "source": "Phil Karlton"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "typed-api-contracts",
+    "date": "2026-07-03",
+    "category": "coding",
+    "cover": "code",
+    "tags": [
+      "TypeScript",
+      "API"
+    ],
+    "published": true,
+    "title": {
+      "en": "Typed API Contracts Without the Ceremony",
+      "bn": "ঝামেলা ছাড়া টাইপ-করা API চুক্তি"
+    },
+    "excerpt": {
+      "en": "A lightweight pattern for keeping server responses and client types in sync, using one schema and no code generation.",
+      "bn": "একটি স্কিমা দিয়ে সার্ভারের উত্তর আর ক্লায়েন্টের টাইপ মিলিয়ে রাখার হালকা পদ্ধতি, কোড জেনারেশন ছাড়াই।"
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "Most API bugs I have seen were mismatches between what the server sends and what the client expects. A single source of truth fixes most of them."
+        },
+        {
+          "type": "code",
+          "language": "ts",
+          "code": "const Post = z.object({\n  slug: z.string(),\n  title: z.string(),\n  date: z.string(),\n});\n\ntype Post = z.infer<typeof Post>;"
+        },
+        {
+          "type": "callout",
+          "text": "Validate at the edge of your system, then trust the types inside it."
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "আমি যত API বাগ দেখেছি, তার বেশিরভাগই ছিল সার্ভার যা পাঠায় আর ক্লায়েন্ট যা আশা করে, তার মধ্যে গরমিল। একটি একক উৎস থাকলে এর বেশিরভাগই মিটে যায়।"
+        },
+        {
+          "type": "code",
+          "language": "ts",
+          "code": "const Post = z.object({\n  slug: z.string(),\n  title: z.string(),\n  date: z.string(),\n});\n\ntype Post = z.infer<typeof Post>;"
+        },
+        {
+          "type": "callout",
+          "text": "সিস্টেমের প্রান্তে যাচাই করুন, ভেতরে টাইপের ওপর ভরসা রাখুন।"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "testing-for-small-teams",
+    "date": "2026-05-15",
+    "category": "engineering",
+    "cover": "circuit",
+    "tags": [
+      "Testing",
+      "Process"
+    ],
+    "published": true,
+    "title": {
+      "en": "A Testing Strategy for Small Teams",
+      "bn": "ছোট দলের জন্য টেস্টিং কৌশল"
+    },
+    "excerpt": {
+      "en": "You do not need a hundred unit tests. A few well-chosen end-to-end checks catch most of the bugs that matter.",
+      "bn": "একশো ইউনিট টেস্টের দরকার নেই। কয়েকটি ভালোভাবে বেছে নেওয়া এন্ড-টু-এন্ড চেকই বেশিরভাগ গুরুত্বপূর্ণ বাগ ধরে ফেলে।"
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "Small teams rarely have time to maintain a huge test suite. I aim for a short list of checks that fail loudly when something important breaks."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Start with the critical paths"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Sign up, sign in, and sign out",
+            "The main action a visitor takes, such as a purchase or a subscription",
+            "Anything that writes money or personal data"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Keep the tests honest"
+        },
+        {
+          "type": "paragraph",
+          "text": "A flaky test is worse than none, because people learn to ignore red builds. Delete or fix any test that fails more than once without a code change."
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "ছোট দলের হাতে বিশাল টেস্ট স্যুট রাখার সময় সাধারণত থাকে না। আমি এমন একটি ছোট তালিকা রাখি, যেটি গুরুত্বপূর্ণ কিছু ভাঙলে জোরে ধাক্কা দেয়।"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "গুরুত্বপূর্ণ পথ দিয়ে শুরু করুন"
+        },
+        {
+          "type": "list",
+          "items": [
+            "সাইন-আপ, সাইন-ইন ও সাইন-আউট",
+            "দর্শক যে মূল কাজটি করেন, যেমন কেনা বা সাবস্ক্রিপশন",
+            "যেকোনো টাকা বা ব্যক্তিগত তথ্য লেখে এমন কিছু"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "টেস্ট সৎ রাখুন"
+        },
+        {
+          "type": "paragraph",
+          "text": "ফ্লেকি টেস্ট না থাকাটাই ভালো, কারণ মানুষ লাল বিল্ড উপেক্ষা করতে শিখে যায়। কোড না বদলেও একাধিকবার ব্যর্থ হওয়া টেস্ট মুছুন বা ঠিক করুন।"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "postgres-indexes-explained",
+    "date": "2026-04-22",
+    "category": "coding",
+    "cover": "data",
+    "tags": [
+      "Database",
+      "PostgreSQL"
+    ],
+    "published": true,
+    "title": {
+      "en": "Postgres Indexes, Explained Plainly",
+      "bn": "Postgres ইনডেক্স, সহজ ভাষায়"
+    },
+    "excerpt": {
+      "en": "When an index helps, when it hurts, and how to read EXPLAIN without guessing.",
+      "bn": "ইনডেক্স কখন সাহায্য করে, কখন ক্ষতি করে, আর অনুমান ছাড়া EXPLAIN কীভাবে পড়বেন।"
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "An index is a sorted copy of some columns. It makes lookups fast, but every write has to update it, so more indexes is not always better."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Index the columns you filter and join on",
+            "Check EXPLAIN ANALYZE before and after a change",
+            "Remove indexes that no query uses"
+          ]
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "ইনডেক্স মানে কয়েকটি কলামের একটি সাজানো কপি। এটি খোঁজা দ্রুত করে, কিন্তু প্রতিটি লেখার সময় এটিও আপডেট করতে হয়, তাই বেশি ইনডেক্স মানেই ভালো নয়।"
+        },
+        {
+          "type": "list",
+          "items": [
+            "যেসব কলামে ফিল্টার বা জয়েন হয়, সেগুলোতে ইনডেক্স দিন",
+            "পরিবর্তনের আগে ও পরে EXPLAIN ANALYZE দেখুন",
+            "যে ইনডেক্স কোনো কোয়েরি ব্যবহার করে না, সেটি সরান"
+          ]
+        }
+      ]
+    }
+  }
+]

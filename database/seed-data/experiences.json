@@ -1,0 +1,137 @@
+[
+  {
+    "company": "Product team (sample)",
+    "company_url": null,
+    "employment_type": "full-time",
+    "start_date": "2024-03-01",
+    "end_date": null,
+    "role": {
+      "en": "Senior Software Engineer",
+      "bn": "সিনিয়র সফটওয়্যার ইঞ্জিনিয়ার"
+    },
+    "location": {
+      "en": "Dhaka, Bangladesh",
+      "bn": "ঢাকা, বাংলাদেশ"
+    },
+    "summary": {
+      "en": "Leading the web platform and the team's first AI features, mentoring engineers, and setting standards for testing and releases.",
+      "bn": "ওয়েব প্ল্যাটফর্ম আর টিমের প্রথম AI ফিচারগুলোর নেতৃত্ব, ইঞ্জিনিয়ারদের পরামর্শ, এবং টেস্টিং ও রিলিজের মান ঠিক করা।"
+    },
+    "highlights": {
+      "en": [
+        "Shipped a retrieval-based help assistant that answers from internal docs with citations.",
+        "Cut page load time by 40% by moving to server-rendered Inertia pages.",
+        "Introduced evaluation suites for every LLM feature, run in CI."
+      ],
+      "bn": [
+        "অভ্যন্তরীণ ডকুমেন্ট থেকে সূত্রসহ উত্তর দেওয়া রিট্রিভাল-ভিত্তিক হেল্প অ্যাসিস্ট্যান্ট চালু করা।",
+        "সার্ভারে রেন্ডার করা Inertia পাতায় সরিয়ে পেজ লোডের সময় ৪০% কমানো।",
+        "প্রতিটি LLM ফিচারের জন্য CI-তে চলা মূল্যায়ন স্যুট চালু করা।"
+      ]
+    },
+    "stack": [
+      "Laravel",
+      "React",
+      "Inertia.js",
+      "MySQL",
+      "LLM APIs"
+    ]
+  },
+  {
+    "company": "Fintech startup (sample)",
+    "company_url": null,
+    "employment_type": "full-time",
+    "start_date": "2021-02-01",
+    "end_date": "2024-02-29",
+    "role": {
+      "en": "Software Engineer",
+      "bn": "সফটওয়্যার ইঞ্জিনিয়ার"
+    },
+    "location": {
+      "en": "Remote",
+      "bn": "রিমোট"
+    },
+    "summary": {
+      "en": "Built payment flows and reporting dashboards, and moved the API from loosely typed REST to typed contracts.",
+      "bn": "পেমেন্ট ফ্লো ও রিপোর্টিং ড্যাশবোর্ড বানানো, এবং API-কে টাইপ-করা চুক্তিতে নিয়ে যাওয়া।"
+    },
+    "highlights": {
+      "en": [
+        "Designed the reconciliation service that matched 1M+ transactions a month.",
+        "Built the merchant reporting dashboard used by every customer."
+      ],
+      "bn": [
+        "মাসে ১০ লাখের বেশি লেনদেন মেলানো রিকনসিলিয়েশন সার্ভিস ডিজাইন করা।",
+        "প্রত্যেক গ্রাহকের ব্যবহৃত মার্চেন্ট রিপোর্টিং ড্যাশবোর্ড তৈরি।"
+      ]
+    },
+    "stack": [
+      "PHP",
+      "Laravel",
+      "PostgreSQL",
+      "Redis",
+      "Vue"
+    ]
+  },
+  {
+    "company": "Digital agency (sample)",
+    "company_url": null,
+    "employment_type": "full-time",
+    "start_date": "2019-01-01",
+    "end_date": "2021-01-31",
+    "role": {
+      "en": "Web Developer",
+      "bn": "ওয়েব ডেভেলপার"
+    },
+    "location": {
+      "en": "Dhaka, Bangladesh",
+      "bn": "ঢাকা, বাংলাদেশ"
+    },
+    "summary": {
+      "en": "Delivered websites, content management systems, and design systems for clients across three time zones.",
+      "bn": "তিন সময় অঞ্চলের ক্লায়েন্টদের জন্য ওয়েবসাইট, কনটেন্ট ম্যানেজমেন্ট সিস্টেম ও ডিজাইন সিস্টেম তৈরি।"
+    },
+    "highlights": {
+      "en": [
+        "Built a reusable component library adopted across 12 client projects."
+      ],
+      "bn": [
+        "১২টি ক্লায়েন্ট প্রকল্পে ব্যবহৃত পুনর্ব্যবহারযোগ্য কম্পোনেন্ট লাইব্রেরি তৈরি।"
+      ]
+    },
+    "stack": [
+      "JavaScript",
+      "WordPress",
+      "Laravel",
+      "Sass"
+    ]
+  },
+  {
+    "company": "Open-source (sample)",
+    "company_url": null,
+    "employment_type": "freelance",
+    "start_date": "2018-06-01",
+    "end_date": "2018-12-31",
+    "role": {
+      "en": "Freelance Developer",
+      "bn": "ফ্রিল্যান্স ডেভেলপার"
+    },
+    "location": {
+      "en": "Remote",
+      "bn": "রিমোট"
+    },
+    "summary": {
+      "en": "Small web projects and contributions to open-source PHP libraries while finishing university.",
+      "bn": "বিশ্ববিদ্যালয় শেষ করার সময় ছোট ওয়েব প্রকল্প আর ওপেন-সোর্স PHP লাইব্রেরিতে অবদান।"
+    },
+    "highlights": {
+      "en": [],
+      "bn": []
+    },
+    "stack": [
+      "PHP",
+      "MySQL",
+      "jQuery"
+    ]
+  }
+]

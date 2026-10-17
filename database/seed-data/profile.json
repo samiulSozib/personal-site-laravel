@@ -1,0 +1,128 @@
+{
+  "role": {
+    "en": "Software Engineer · Web & AI",
+    "bn": "সফটওয়্যার ইঞ্জিনিয়ার · ওয়েব ও AI"
+  },
+  "location": {
+    "en": "Bangladesh",
+    "bn": "বাংলাদেশ"
+  },
+  "languages": {
+    "en": "Bangla (native), English (professional)",
+    "bn": "বাংলা (মাতৃভাষা), ইংরেজি (পেশাদার)"
+  },
+  "yearsInSoftware": 7,
+  "story": {
+    "en": [
+      "I started writing code because I wanted to understand how the software I used every day actually worked. That curiosity turned into a career building web platforms, internal tools, and the systems that keep them running.",
+      "Today most of my work sits where web engineering meets AI: putting language models behind clean APIs, grounding them in real data, and measuring whether they actually help. I care about software that is fast, well tested, and easy for the next engineer to change."
+    ],
+    "bn": [
+      "প্রতিদিন যে সফটওয়্যার ব্যবহার করি, সেটি আসলে কীভাবে কাজ করে তা বোঝার ইচ্ছা থেকেই কোড লেখা শুরু। সেই কৌতূহল এখন ওয়েব প্ল্যাটফর্ম, অভ্যন্তরীণ টুল আর সেগুলো চালু রাখার সিস্টেম বানানোর পেশায় পরিণত হয়েছে।",
+      "এখন আমার বেশিরভাগ কাজ যেখানে ওয়েব ইঞ্জিনিয়ারিং আর AI মিলেছে: ভাষা মডেলকে পরিষ্কার API-এর পেছনে রাখা, বাস্তব ডেটার সঙ্গে যুক্ত করা, আর সত্যিই কাজে লাগছে কি না তা মাপা। আমার কাছে গুরুত্বপূর্ণ এমন সফটওয়্যার যা দ্রুত, ভালোভাবে টেস্ট করা, আর পরের ইঞ্জিনিয়ারের জন্য সহজে বদলানো যায়।"
+    ]
+  },
+  "skills": [
+    {
+      "name": {
+        "en": "Languages",
+        "bn": "ভাষা"
+      },
+      "items": [
+        "PHP",
+        "TypeScript",
+        "JavaScript",
+        "Python",
+        "SQL"
+      ]
+    },
+    {
+      "name": {
+        "en": "Web & frameworks",
+        "bn": "ওয়েব ও ফ্রেমওয়ার্ক"
+      },
+      "items": [
+        "Laravel",
+        "React",
+        "Inertia.js",
+        "Tailwind CSS",
+        "REST APIs"
+      ]
+    },
+    {
+      "name": {
+        "en": "AI & data",
+        "bn": "AI ও ডেটা"
+      },
+      "items": [
+        "LLM APIs",
+        "RAG",
+        "Embeddings & vector search",
+        "Prompt design",
+        "LLM evaluation"
+      ]
+    },
+    {
+      "name": {
+        "en": "Infrastructure",
+        "bn": "ইনফ্রাস্ট্রাকচার"
+      },
+      "items": [
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Linux",
+        "CI/CD"
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "title": {
+        "en": "Ship small, learn fast",
+        "bn": "ছোট করে ছাড়ুন, দ্রুত শিখুন"
+      },
+      "body": {
+        "en": "Small releases are easier to review, roll back, and learn from than one large launch.",
+        "bn": "একটি বড় লঞ্চের চেয়ে ছোট রিলিজ রিভিউ, রোলব্যাক ও শেখার জন্য সহজ।"
+      }
+    },
+    {
+      "title": {
+        "en": "Clarity over cleverness",
+        "bn": "চালাকির চেয়ে স্পষ্টতা"
+      },
+      "body": {
+        "en": "Code is read far more often than it is written. I optimise for the next person who has to change it.",
+        "bn": "কোড লেখার চেয়ে পড়া হয় অনেক বেশি। পরের যিনি বদলাবেন, তার কথা ভেবে লিখি।"
+      }
+    },
+    {
+      "title": {
+        "en": "Measure before optimising",
+        "bn": "অপ্টিমাইজের আগে মাপুন"
+      },
+      "body": {
+        "en": "Performance work starts with a measurement and ends with one. Guesses are where time disappears.",
+        "bn": "পারফরম্যান্স কাজ মাপা দিয়ে শুরু ও মাপা দিয়েই শেষ হয়। অনুমানেই সময় নষ্ট হয়।"
+      }
+    }
+  ],
+  "education": [
+    {
+      "degree": {
+        "en": "B.Sc. in Computer Science and Engineering",
+        "bn": "কম্পিউটার সায়েন্স ও ইঞ্জিনিয়ারিংয়ে বিএসসি"
+      },
+      "school": {
+        "en": "University (sample)",
+        "bn": "বিশ্ববিদ্যালয় (নমুনা)"
+      },
+      "period": {
+        "en": "2014 – 2018",
+        "bn": "২০১৪ – ২০১৮"
+      }
+    }
+  ]
+}

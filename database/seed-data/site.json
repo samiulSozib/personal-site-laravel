@@ -1,0 +1,47 @@
+{
+  "name": {
+    "en": "Samiul Bashar",
+    "bn": "সামিউল বাশার"
+  },
+  "title": {
+    "en": "Samiul Bashar — Software Engineer",
+    "bn": "সামিউল বাশার — সফটওয়্যার ইঞ্জিনিয়ার"
+  },
+  "description": {
+    "en": "Software engineer building web platforms and practical AI features. Projects, experience, and notes on AI and coding.",
+    "bn": "ওয়েব প্ল্যাটফর্ম আর বাস্তবমুখী AI ফিচার বানানো সফটওয়্যার ইঞ্জিনিয়ার। প্রকল্প, অভিজ্ঞতা, আর AI ও কোডিং নিয়ে লেখা।"
+  },
+  "intro": {
+    "en": "I design and build web platforms with Laravel and React, and I bring language models into real products: retrieval, evaluation, and the plumbing that makes AI features reliable.",
+    "bn": "আমি Laravel আর React দিয়ে ওয়েব প্ল্যাটফর্ম ডিজাইন ও তৈরি করি, এবং ভাষা মডেলকে বাস্তব পণ্যে নিয়ে আসি: রিট্রিভাল, মূল্যায়ন, আর AI ফিচারকে নির্ভরযোগ্য করার কারিগরি।"
+  },
+  "about": {
+    "en": "I build software for a living. This site collects my projects, my work history, and what I learn about AI and engineering along the way.",
+    "bn": "পেশায় আমি সফটওয়্যার বানাই। এই সাইটে আছে আমার প্রকল্প, কাজের অভিজ্ঞতা, আর AI ও ইঞ্জিনিয়ারিং নিয়ে যা শিখি তা।"
+  },
+  "interests": {
+    "en": [
+      "LLM-powered product features",
+      "Laravel & React platforms",
+      "Retrieval and vector search",
+      "System design and APIs"
+    ],
+    "bn": [
+      "LLM-চালিত প্রোডাক্ট ফিচার",
+      "Laravel ও React প্ল্যাটফর্ম",
+      "রিট্রিভাল ও ভেক্টর সার্চ",
+      "সিস্টেম ডিজাইন ও API"
+    ]
+  },
+  "email": "",
+  "social": {
+    "github": "",
+    "linkedin": "",
+    "x": ""
+  },
+  "year": 2026,
+  "availability": {
+    "en": "Open to new opportunities",
+    "bn": "নতুন সুযোগের জন্য প্রস্তুত"
+  }
+}

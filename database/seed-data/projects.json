@@ -1,0 +1,421 @@
+[
+  {
+    "slug": "docchat",
+    "featured": true,
+    "status": "in progress",
+    "cover": "neural",
+    "stack": [
+      "Laravel",
+      "pgvector",
+      "LLM API",
+      "React"
+    ],
+    "name": {
+      "en": "DocChat",
+      "bn": "ডকচ্যাট"
+    },
+    "summary": {
+      "en": "Ask questions about internal documentation and get answers with citations. Retrieval-augmented generation over Markdown and PDF sources.",
+      "bn": "অভ্যন্তরীণ ডকুমেন্টেশন নিয়ে প্রশ্ন করুন, সূত্রসহ উত্তর পান। Markdown ও PDF উৎসের ওপর রিট্রিভাল-অগমেন্টেড জেনারেশন।"
+    },
+    "role": {
+      "en": "Creator · full-stack",
+      "bn": "নির্মাতা · ফুল-স্ট্যাক"
+    },
+    "period": {
+      "en": "2026 – present",
+      "bn": "২০২৬ – বর্তমান"
+    },
+    "highlights": {
+      "en": [
+        "Answers cite the exact section they came from",
+        "Re-indexes only the documents that changed",
+        "Evaluation suite of 60 real questions runs in CI"
+      ],
+      "bn": [
+        "প্রতিটি উত্তর ঠিক কোন অংশ থেকে এসেছে তা উল্লেখ করে",
+        "শুধু বদলে যাওয়া ডকুমেন্টগুলো আবার ইনডেক্স করে",
+        "৬০টি বাস্তব প্রশ্নের মূল্যায়ন-স্যুট CI-তে চলে"
+      ]
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "Internal documentation is usually spread across wikis, README files and PDFs, and the search box rarely finds the right page. DocChat lets people ask a question in plain language and get a short answer with links to the exact sections it used."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "How it works"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Documents are split by heading, so each chunk keeps its context.",
+            "Chunks are embedded and stored in PostgreSQL with pgvector.",
+            "A question retrieves the closest chunks, drops weak matches, and sends the rest to the model with an instruction to cite them."
+          ]
+        },
+        {
+          "type": "code",
+          "language": "php",
+          "code": "$chunks = Chunk::nearestTo($embedding, limit: 6)\n    ->where('score', '>=', 0.75)\n    ->get();"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What I learned"
+        },
+        {
+          "type": "paragraph",
+          "text": "Most wrong answers were retrieval problems. Better chunking and a similarity threshold improved answers more than any prompt change."
+        },
+        {
+          "type": "callout",
+          "text": "Status: in use by a small team while I harden permissions and add Bangla documents."
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "অভ্যন্তরীণ ডকুমেন্টেশন সাধারণত উইকি, README আর PDF-এ ছড়িয়ে থাকে, আর সার্চ বক্স খুব কমই সঠিক পাতা খুঁজে পায়। ডকচ্যাটে সাধারণ ভাষায় প্রশ্ন করলে সংক্ষিপ্ত উত্তর আর ব্যবহৃত অংশগুলোর লিংক পাওয়া যায়।"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "কীভাবে কাজ করে"
+        },
+        {
+          "type": "list",
+          "items": [
+            "ডকুমেন্ট শিরোনাম অনুযায়ী ভাগ করা হয়, যাতে প্রতিটি অংশ তার প্রসঙ্গ ধরে রাখে।",
+            "অংশগুলোর এমবেডিং pgvector-সহ PostgreSQL-এ রাখা হয়।",
+            "প্রশ্নের সবচেয়ে কাছের অংশগুলো খুঁজে, দুর্বল মিল বাদ দিয়ে, বাকিগুলো সূত্র উল্লেখের নির্দেশসহ মডেলে পাঠানো হয়।"
+          ]
+        },
+        {
+          "type": "code",
+          "language": "php",
+          "code": "$chunks = Chunk::nearestTo($embedding, limit: 6)\n    ->where('score', '>=', 0.75)\n    ->get();"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "যা শিখেছি"
+        },
+        {
+          "type": "paragraph",
+          "text": "বেশিরভাগ ভুল উত্তর ছিল রিট্রিভালের সমস্যা। প্রম্পট বদলানোর চেয়ে ভালো চাঙ্কিং আর মিলের সীমা উত্তরকে বেশি উন্নত করেছে।"
+        },
+        {
+          "type": "callout",
+          "text": "অবস্থা: অনুমতি-ব্যবস্থা মজবুত করা আর বাংলা ডকুমেন্ট যোগ করার কাজ চলাকালীন একটি ছোট টিম এটি ব্যবহার করছে।"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "shobdo-spellcheck",
+    "featured": true,
+    "status": "in progress",
+    "cover": "circuit",
+    "stack": [
+      "TypeScript",
+      "Unicode",
+      "NLP",
+      "Vitest"
+    ],
+    "name": {
+      "en": "Shobdo Spellcheck",
+      "bn": "শব্দ বানান-পরীক্ষক"
+    },
+    "summary": {
+      "en": "A Bangla spellchecker that understands conjuncts and common typing mistakes, built as a small library with a browser extension.",
+      "bn": "যুক্তাক্ষর আর সাধারণ টাইপিং ভুল বোঝে এমন বাংলা বানান-পরীক্ষক, ছোট একটি লাইব্রেরি আর ব্রাউজার এক্সটেনশন হিসেবে তৈরি।"
+    },
+    "role": {
+      "en": "Author",
+      "bn": "লেখক"
+    },
+    "period": {
+      "en": "2025 – present",
+      "bn": "২০২৫ – বর্তমান"
+    },
+    "highlights": {
+      "en": [
+        "Handles conjuncts and vowel signs as single units",
+        "Suggests fixes for common phonetic typing mistakes",
+        "Runs fully in the browser, no server needed"
+      ],
+      "bn": [
+        "যুক্তাক্ষর ও কার-চিহ্নকে একক হিসেবে বিবেচনা করে",
+        "সাধারণ ফোনেটিক টাইপিং ভুলের সংশোধন প্রস্তাব করে",
+        "সম্পূর্ণ ব্রাউজারে চলে, সার্ভার লাগে না"
+      ]
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "Most spellcheckers treat Bangla as a sequence of code points, so they flag correct words and miss real mistakes. Shobdo works on grapheme clusters and knows the common ways people mistype on phonetic keyboards."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Approach"
+        },
+        {
+          "type": "list",
+          "items": [
+            "A word list built from public-domain text, normalised to one Unicode form.",
+            "Edit distance measured on graphemes, not code points.",
+            "A small table of phonetic confusions, such as ি and ী, weighted by how often they occur."
+          ]
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "বেশিরভাগ বানান-পরীক্ষক বাংলাকে কোড পয়েন্টের সারি হিসেবে দেখে, তাই সঠিক শব্দকে ভুল ধরে আর আসল ভুল এড়িয়ে যায়। শব্দ কাজ করে গ্রাফিম ক্লাস্টার ধরে, আর ফোনেটিক কিবোর্ডে মানুষের সাধারণ টাইপিং ভুলগুলো জানে।"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "পদ্ধতি"
+        },
+        {
+          "type": "list",
+          "items": [
+            "পাবলিক-ডোমেইন লেখা থেকে তৈরি শব্দতালিকা, একই ইউনিকোড রূপে আনা।",
+            "কোড পয়েন্ট নয়, গ্রাফিম ধরে এডিট দূরত্ব মাপা।",
+            "ি আর ী-এর মতো ফোনেটিক বিভ্রান্তির ছোট তালিকা, কতবার ঘটে সেই অনুযায়ী ওজন দেওয়া।"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "slug": "prompt-lab",
+    "featured": true,
+    "status": "live",
+    "cover": "terminal",
+    "stack": [
+      "Python",
+      "YAML",
+      "GitHub Actions"
+    ],
+    "name": {
+      "en": "Prompt Lab",
+      "bn": "প্রম্পট ল্যাব"
+    },
+    "summary": {
+      "en": "A command-line harness that runs prompt test cases against several models and reports pass rates in CI.",
+      "bn": "কমান্ড-লাইন টুল যা একাধিক মডেলের ওপর প্রম্পট টেস্ট কেস চালায় এবং CI-তে পাসের হার জানায়।"
+    },
+    "role": {
+      "en": "Creator",
+      "bn": "নির্মাতা"
+    },
+    "period": {
+      "en": "2026",
+      "bn": "২০২৬"
+    },
+    "highlights": {
+      "en": [
+        "One YAML file per prompt, with real test cases",
+        "Compares several models side by side",
+        "Fails the CI build when the pass rate drops"
+      ],
+      "bn": [
+        "প্রতিটি প্রম্পটের জন্য বাস্তব টেস্ট কেসসহ একটি YAML ফাইল",
+        "একাধিক মডেল পাশাপাশি তুলনা করে",
+        "পাসের হার কমলে CI বিল্ড ব্যর্থ করে"
+      ]
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "Prompt Lab grew out of the idea that prompts should be tested like code. Each prompt lives next to a list of inputs and the traits a good answer must have."
+        },
+        {
+          "type": "code",
+          "language": "bash",
+          "code": "prompt-lab run prompts/summarize-ticket --models a,b --min-pass 0.9"
+        },
+        {
+          "type": "paragraph",
+          "text": "The report shows each case, which checks failed, and how the pass rate changed since the last run."
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "প্রম্পটও কোডের মতো টেস্ট করা উচিত, এই ভাবনা থেকেই প্রম্পট ল্যাব। প্রতিটি প্রম্পটের পাশে থাকে ইনপুটের তালিকা আর ভালো উত্তরে যেসব বৈশিষ্ট্য থাকতেই হবে।"
+        },
+        {
+          "type": "code",
+          "language": "bash",
+          "code": "prompt-lab run prompts/summarize-ticket --models a,b --min-pass 0.9"
+        },
+        {
+          "type": "paragraph",
+          "text": "রিপোর্টে প্রতিটি কেস, কোন যাচাই ব্যর্থ হয়েছে, আর আগের রানের তুলনায় পাসের হার কতটা বদলেছে তা দেখা যায়।"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "build-notes-cli",
+    "featured": false,
+    "status": "live",
+    "cover": "code",
+    "stack": [
+      "Node.js",
+      "Git",
+      "Commander"
+    ],
+    "name": {
+      "en": "Build Notes CLI",
+      "bn": "বিল্ড নোটস CLI"
+    },
+    "summary": {
+      "en": "Generates release notes from commit history and pull request labels.",
+      "bn": "কমিট ইতিহাস আর পুল রিকোয়েস্ট লেবেল থেকে রিলিজ নোট তৈরি করে।"
+    },
+    "role": {
+      "en": "Author",
+      "bn": "লেখক"
+    },
+    "period": {
+      "en": "2024",
+      "bn": "২০২৪"
+    },
+    "highlights": {
+      "en": [
+        "Groups changes by pull request label",
+        "Outputs Markdown ready for a GitHub release"
+      ],
+      "bn": [
+        "পুল রিকোয়েস্ট লেবেল অনুযায়ী পরিবর্তন সাজায়",
+        "GitHub রিলিজের জন্য তৈরি Markdown দেয়"
+      ]
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "A small command-line tool that turns commit history and pull request labels into readable release notes."
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "কমিট ইতিহাস আর পুল রিকোয়েস্ট লেবেল থেকে পড়ার উপযোগী রিলিজ নোট বানানোর ছোট একটি কমান্ড-লাইন টুল।"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "mini-analytics",
+    "featured": false,
+    "status": "archived",
+    "cover": "data",
+    "stack": [
+      "Go",
+      "SQLite"
+    ],
+    "name": {
+      "en": "Mini Analytics",
+      "bn": "মিনি অ্যানালিটিক্স"
+    },
+    "summary": {
+      "en": "A privacy-friendly page view counter in a single binary, with no cookies.",
+      "bn": "কুকি ছাড়া, একটিমাত্র বাইনারিতে গোপনীয়তা-বান্ধব পেজ ভিউ কাউন্টার।"
+    },
+    "role": {
+      "en": "Author",
+      "bn": "লেখক"
+    },
+    "period": {
+      "en": "2023",
+      "bn": "২০২৩"
+    },
+    "highlights": {
+      "en": [
+        "Single binary, no cookies",
+        "Stores daily totals only"
+      ],
+      "bn": [
+        "একটিমাত্র বাইনারি, কুকি নেই",
+        "শুধু দৈনিক মোট সংখ্যা রাখে"
+      ]
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "A page view counter for personal sites that respects visitors' privacy. Retired in favour of server logs."
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "ব্যক্তিগত সাইটের জন্য দর্শকের গোপনীয়তা রক্ষা করা পেজ ভিউ কাউন্টার। সার্ভার লগ ব্যবহারের পর এটি বন্ধ করা হয়েছে।"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "ledger-sync",
+    "featured": false,
+    "status": "archived",
+    "cover": "orbit",
+    "stack": [
+      "Rust",
+      "CRDT",
+      "WebAssembly"
+    ],
+    "name": {
+      "en": "Ledger Sync",
+      "bn": "লেজার সিঙ্ক"
+    },
+    "summary": {
+      "en": "An experiment in offline-first sync using CRDTs compiled to WebAssembly.",
+      "bn": "WebAssembly-তে কম্পাইল করা CRDT দিয়ে অফলাইন-প্রথম সিঙ্কের পরীক্ষা।"
+    },
+    "role": {
+      "en": "Experiment",
+      "bn": "পরীক্ষা"
+    },
+    "period": {
+      "en": "2023",
+      "bn": "২০২৩"
+    },
+    "highlights": {
+      "en": [
+        "CRDTs compiled to WebAssembly",
+        "Works offline, merges on reconnect"
+      ],
+      "bn": [
+        "WebAssembly-তে কম্পাইল করা CRDT",
+        "অফলাইনে কাজ করে, সংযোগ ফিরলে মিলিয়ে নেয়"
+      ]
+    },
+    "content": {
+      "en": [
+        {
+          "type": "paragraph",
+          "text": "An experiment in offline-first sync for a small ledger app, to learn how CRDTs behave in practice."
+        }
+      ],
+      "bn": [
+        {
+          "type": "paragraph",
+          "text": "ছোট একটি লেজার অ্যাপের জন্য অফলাইন-প্রথম সিঙ্কের পরীক্ষা, CRDT বাস্তবে কেমন আচরণ করে তা শিখতে।"
+        }
+      ]
+    }
+  }
+]
